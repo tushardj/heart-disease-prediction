@@ -1,0 +1,68 @@
+<div class="container">
+    <table class="table table-sm">
+        <thead>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Number</th>
+            <th>Address</th>
+            <th>Gender</th>
+            <th>Age</th>
+            <th>CP</th>
+            <th>Sugar</th>
+            <th>BP</th>
+            <th>Chlorestrol</th>
+            <th>Restcg</th>
+            <th>Exang</th>
+            <th>Trestbps</th>
+            <th>Oldpeak</th>
+            <th>Slope</th>
+            <th>Thal</th>
+            <th>CA</th>
+           <th>FBS</th>
+            <th>Medical</th>
+        </thead>
+        <ng-container *ngFor="let patient of mediArray">
+            <tr class="table-dark">
+                <td>{{patient.PfullName}}</td>
+                <td>{{patient.Pemail}}</td>
+                <td>{{patient.Pmobile}}</td>
+                <td>{{patient.PAddress}}</td>
+                <td>{{patient.gender}}</td>
+                <td>{{patient.age}}</td>
+                <td>{{patient.CP}}</td>
+                <td>{{patient.sugar}}</td>
+                 <td>{{patient.BP}}</td>
+                 <td>{{patient.chlorestrol}}</td>
+                 <td>{{patient.restcg}}</td> 
+                 <td>{{patient.exang}}</td>
+                 <td>{{patient.trestbps}}</td>
+                 <td>{{patient.oldpeak}}</td> 
+                 <td>{{patient.restcg}}</td>
+                 <td>{{patient.slope}}</td>
+                 <td>{{patient.CA}}</td>
+                 <td>{{patient.thal}}</td>
+                 <td>{{patient.fbs}}</td>
+                <td>{{patient.medical}}</td>
+
+                <!-- <td>
+                    <button class="btn btn-outline-info" (click)="patientService.populateForm(patient)">Edit
+                        Information</button>
+                    <button class="btn btn-outline-danger" (click)="onDelete(patient.$key)">Remove patient</button>
+                </td> -->
+
+                
+
+
+            </tr>
+        </ng-container>
+    </table>
+
+
+    <div class="form-group">
+      
+        <span class="col-sm-2"></span>
+        <a class="btn btn-info col-sm-2" [routerLink]="['/patientmedical']">predict</a>
+
+      </div>
+
+</div>

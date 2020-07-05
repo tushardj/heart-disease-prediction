@@ -1,0 +1,83 @@
+<div class="row">
+  <div class="col-md-5">
+    <form #predictForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+      {{predictForm.value | json}}
+       <div class="form-group">
+        <label>Age</label>
+        <input [(ngModel)]="predictData.age" id="age" name="age" style="width:180% " class="form-control">
+      </div>
+
+      
+      <div class="form-group">
+        <label>Gender</label>
+        <input [(ngModel)]="predictData.gender" id="gender" name="gender" style="width:180% " class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Chest Pain</label>
+        <input [(ngModel)]="predictData.cp" id="CP" name="cp" style="width:180% " class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Resting Blood Pressure</label>
+        <input [(ngModel)]="predictData.bp" id="BP" name="BP" style="width:180% " class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Chlorestrol</label>
+        <input [(ngModel)]="predictData.chlorestrol" id="chlorestrol" name="chlorestrol" style="width:180% " class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Fbs</label>
+        <input [(ngModel)]="predictData.fbs" id="fbs" name="fbs" style="width:180% " class="form-control" placeholder="Fasting blood sugar">
+      </div>
+
+      <div class="form-group">
+        <label>Restcg</label>
+        <input [(ngModel)]="predictData.restecg" id="restcg" name="restecg" style="width:180% " class="form-control"
+          placeholder="resting electrocardiographic results">
+      </div>
+      <div class="form-group">
+        <label>Thalach</label>
+        <input [(ngModel)]="predictData.thalach" id="thalach" name="thalach" style="width:180% " class="form-control">
+      </div>
+
+      <div class="form-group">
+        <label>Exang</label>
+        <input [(ngModel)]="predictData.exang" id="exang" name="exang" style="width:180% " class="form-control"
+          placeholder=" exercise induced angina">
+      </div>
+
+      
+      <div class="form-group">
+        <label>Old Peak</label>
+        <input [(ngModel)]="predictData.oldpeak" id="oldpeak" name="oldpeak" style="width:180% " class="form-control"
+          placeholder="depression induced by exercise to rest">
+      </div>
+      <div class="form-group">
+        <label>Slope</label>
+        <input [(ngModel)]="predictData.slope" id="slope" name="slope" style="width:180% " class="form-control"
+          placeholder="the peak exercise ST segment">
+      </div>
+
+      <div class="form-group">
+        <label>CA</label>
+        <input [(ngModel)]="predictData.ca" id="CA" name="CA" style="width:180% " class="form-control"
+          placeholder=" major vessels colored by flourosopy">
+      </div>
+      <div class="form-group">
+        <label>Thal</label>
+        <input [(ngModel)]="predictData.thal" id="thal" name="thal" style="width:180% " class="form-control"
+          placeholder=" resting blood pressure">
+      </div>        
+      <div class="form-group">
+        <label>Any other details</label>
+        <input [(ngModel)]="predictData.medical" id="medical" name="medical" style="width:180% " class="form-control">
+      </div>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary" >Predicts</button>
+      </div>
+      </form>
+  </div>
+
+</div>

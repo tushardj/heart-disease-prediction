@@ -1,0 +1,50 @@
+<p>navbar works!</p>
+    <!-- Navigation navbar navbar-expand-lg navbar-light fixed-top   navbar navbar-expand-sm bg-dark navbar-light-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top"   id="mainNav">
+        <div class="container-fluid">
+            <!----
+          <a class="navbar-brand js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            Menu
+            <i class="fas fa-bars"></i>
+          </button>-->
+
+          <a class="navbar-brand" href="#">
+            <img src="assets/images/heart7.jpg" alt="Logo" style="width:70px;">
+          </a>
+          <a class="navbar-brand" href="#">
+             Welcome
+          </a>
+
+          <h5 *ngIf="user" class="text-uppercase">{{ user?.displayName }}</h5>
+      
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger active" routerLink='' >Home</a>
+              </li>    
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" routerLink='/about' >About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" routerLink='/doctor' *ngIf="user">Add Doctor</a>
+           </li>
+           <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" routerLink='/patientregi' *ngIf="user">Add Patient</a>
+       </li>
+       
+              <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" routerLink='/signup' *ngIf="!user">Register</a>
+              </li>
+              <li class="nav-item">
+                    <a class="nav-link js-scroll-trigger" routerLink='/login' *ngIf="!user">Log in</a>
+               </li>
+              <li class="nav-item">
+                  <a class="nav-link js-scroll-trigger" routerLink='/logout' *ngIf="user">Log out</a>
+             </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      
+      <router-outlet></router-outlet>

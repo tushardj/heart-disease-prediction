@@ -1,0 +1,175 @@
+<div class="container">
+  <br><br>
+
+  <h2> Patient Registration </h2>
+
+
+
+
+  <div class="row">
+    <div class="col-md-5">
+      <form [formGroup]="this.doctorService.form1" (ngSubmit)="onSubmit()">
+
+        <!-- <input type="hidden" formControlName="$key"> -->
+        <div class="form-group">
+          <label>Patient Name</label>
+          <input formControlName="PfullName" class="form-control"
+            [ngClass]="{'is-invalid':submitted && formControls.PfullName.errors}">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.PfullName.errors">
+            Please enter Doctor Name</div>
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input formControlName="Pemail" class="form-control"
+            [ngClass]="{'is-invalid':submitted && formControls.Pemail.errors}">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.Pemail.errors">
+            Invalid email address.</div>
+        </div>
+        <div class="form-group">
+          <label>Mobile Number</label>
+          <input formControlName="Pmobile" class="form-control"
+            [ngClass]="{'is-invalid':submitted && formControls.Pmobile.errors}">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.Pmobile.errors">
+            <label *ngIf="formControls.Pmobile.errors.required">Mobile number is Compulsorry for further
+              communication.</label>
+            <label *ngIf="formControls.Pmobile.errors.minlength">Invalid Mobile Number</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <input formControlName="PAddress" class="form-control">
+        </div>
+        <!-- <div class="form-group">
+          <input type="submit" class="btn btn-primary col-sm-5" value="submit">
+          <span class="col-sm-2"></span>
+          <a class="btn btn-info col-sm-5" [routerLink]="['/combine-list']">Show List</a>
+
+        </div> -->
+        <!-- <input type="hidden" formControlName="$key"> -->
+
+        <div class="row">
+            <div class="col-md-6 mb-2">
+        <div class="form-group">
+         <label>Age</label>
+          <input formControlName="age" size=25 class="form-control">
+        </div>
+      </div>
+      
+        <div class="col-md-6 mb-2">
+        <div class="form-group">
+            
+         <label>Select Gender</label>
+          <select class="custom-select" formControlName="gender">
+           
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option selected>Other</option>
+
+          </select>
+        </div>
+        </div>
+      </div>
+       
+      <div class="row">
+        <div class="col-md-6 mb-2">
+        <div class="form-group">
+         <label>Chest Pain</label>
+          <input formControlName="CP" class="form-control">
+        </div>
+      </div>
+      
+       
+        <div class="col-md-6 mb-2">
+        <div class="form-group">
+        <label>Sugar</label>
+          <input formControlName="sugar" class="form-control">
+        </div>
+      </div>
+    </div>
+    
+
+    <div class="row">
+    <div class="col-md-6 mb-2">
+        <div class="form-group">
+          <td><label>Blood Pressure</label></td>
+          <input formControlName="BP" class="form-control">
+        </div>
+      </div>
+   
+
+      
+      <div class="col-md-6 mb-2">
+        <div class="form-group">
+         <label>Chlorestrol</label>
+          <input formControlName="chlorestrol" class="form-control">
+        </div>
+      </div>
+    </div>
+  
+
+
+
+        <div class="form-group">
+          <label>Restcg</label>
+          <input formControlName="restcg" class="form-control" placeholder="resting electrocardiographic results">
+        </div>
+
+        <div class="form-group">
+          <label>Exang</label>
+          <input formControlName="exang" class="form-control" placeholder=" exercise induced angina">
+        </div>
+
+        <div class="form-group">
+          <label>Trestbps</label>
+          <input formControlName="trestbps" class="form-control" placeholder=" resting blood pressure">
+        </div>
+
+
+        <div class="form-group">
+          <label>Old Peak</label>
+          <input formControlName="oldpeak" class="form-control" placeholder="depression induced by exercise to rest">
+        </div>
+
+        <div class="form-group">
+          <label>Slope</label>
+          <input formControlName="slope" class="form-control" placeholder="the peak exercise ST segment">
+        </div>
+
+        <div class="form-group">
+          <label>CA</label>
+          <input formControlName="CA" class="form-control" placeholder=" major vessels colored by flourosopy">
+        </div>
+
+        <div class="form-group">
+          <label>Thal</label>
+          <input formControlName="thal" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <label>Fbs</label>
+          <input formControlName="fbs" class="form-control" placeholder="Fasting blood sugar">
+        </div>
+
+        <div class="form-group">
+          <label>Any other details</label>
+          <input formControlName="medical" class="form-control">
+        </div>
+
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary" value="Submit">
+          <span class="col-sm-2"></span>
+          <a class="btn btn-info col-sm-5" [routerLink]="['/combine-list']">Show List</a>
+
+        </div>
+      </form>
+      <div class="alert alert-info" *ngIf="showSuccessMessage">
+        Data gets Submitted.
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+</div>

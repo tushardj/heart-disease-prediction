@@ -1,0 +1,33 @@
+<div class="container">
+
+  <form class="form-inline">
+    <input class="form-control" name="searchInput" placeholder="Search doctor into Heart Disease prediction Database"
+      #searchInput="ngModel" [(ngModel)]="searchText" style="width: 80%;">
+    <button class="btn btn-outline-primary" (click)="searchText=''">Clear</button>
+  </form>
+  <table class="table table-sm">
+    <thead>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Number</th>
+      <th>Special List</th>
+      <th></th>
+    </thead>
+    <ng-container *ngFor="let doctor of doctorArray">
+      <tr class="table-dark" *ngIf="filterCondition(doctor)">
+        <td>{{doctor.fullName}}</td>
+        <td>{{doctor.email}}</td>
+        <td>{{doctor.mobile}}</td>
+        <td> <span *ngIf="doctor.spListDoc">{{doctor.spListDoc}}</span> </td>
+
+        <td>
+          <button class="btn btn-outline-info" (click)="doctorService.populateForm(doctor)">Edit Information</button>
+          <button class="btn btn-outline-danger" (click)="onDelete(doctor.$key)">Remove doctor</button>
+        </td>
+      </tr>
+    </ng-container>
+  </table>
+  <div class="alert alert-danger" *ngIf="showDeletedMessage">
+    Deleted successfully.
+  </div>
+</div>
