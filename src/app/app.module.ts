@@ -26,8 +26,8 @@ import { DoctorListComponent } from './auth/doctor-list/doctor-list.component';
 import { PatientregiComponent } from './auth/patientregi/patientregi.component';
 import { PatientmedicalComponent } from './auth/patientmedical/patientmedical.component';
 import { CombineListComponent } from './combine-list/combine-list.component';
-import { ResultComponent } from './auth/Result/result.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ResultComponent } from './auth/result/result.component';
 
 
 

@@ -3,11 +3,12 @@ import pandas as pd
 import pickle
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
-from sklearn.externals import joblib
+# from sklearn.externals import joblib
 from sklearn.model_selection import train_test_split
 from sklearn import tree
 from flask import jsonify
 from flask_cors import CORS, cross_origin
+import json
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'the quick brown fox jumps over the lazy   dog'
@@ -41,22 +42,23 @@ def predict():
     # ytb_model = open("naivebayes_spam_model.pkl","rb")
     # clf = joblib.load(ytb_model)
 
-    # if request.method == 'POST':
-        # age = request.form['age']
-        # gender = request.form['gender']
-        # cp = request.form['cp']
-        # restbp = request.form['BP']
-        # chol = request.form['chlorestrol']
-        # fbs = request.form['fbs']
-        # restecg = request.form['restecg']
-        # thalach = request.form['thalach']
-        # exang = request.form['exang']
-        # oldpeak = request.form['oldpeak']
-        # slope = request.form['slope']
-        # ca = request.form['CA']
-        # thal = request.form['thal']
-    data = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
-        # data = [[age, gender, cp, restbp, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]]
+    if request.method == 'POST':
+        requestData = request.get_json()
+        age = requestData['age']
+        gender = requestData['gender']
+        cp = requestData['cp']
+        restbp = requestData['bp']
+        chol = requestData['chlorestrol']
+        fbs = requestData['fbs']
+        restecg = requestData['restecg']
+        thalach = requestData['thalach']
+        exang = requestData['exang']
+        oldpeak = requestData['oldpeak']
+        slope = requestData['slope']
+        ca = requestData['ca']
+        thal = requestData['thal']
+    # data = [[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]]
+        data = [[age, gender, cp, restbp, chol, fbs, restecg, thalach, exang, oldpeak, slope, ca, thal]]
         # data= [[age],[gender],[cp],[restbp],[chol],[fbs],[restecg],[thalach],[exang],[oldpeak],[slope],[ca],[thal]]
         # vect = cv.transform(data).toarray()
         # my_prediction = clf.predict(vect)
